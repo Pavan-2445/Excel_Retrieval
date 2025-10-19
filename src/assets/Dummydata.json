@@ -1,0 +1,32 @@
+{
+    "Users": [
+        {
+            "UserID" : "USR01",
+            "Name": "John Doe",
+            "Email": "john.doe@example.com",
+            "Password": "password123",
+            "CreatedAt": "2023-10-01T10:00:00Z"
+        },
+        {
+            "UserID" : "USR02",
+            "Name": "Alice Johnson",
+            "Email": "alice.johnson@example.com",
+            "Password": "password456",
+            "CreatedAt": "2023-10-01T10:00:00Z"
+        },
+        {
+            "UserID" : "USR03",
+            "Name": "Bob Brown",
+            "Email": "bob.brown@example.com",
+            "Password": "password789",
+            "CreatedAt": "2023-10-02T11:00:00Z"
+        },
+        {
+            "UserID" : "USR04",
+            "Name": "Jane Smith",
+            "Email": "jane.smith@example.com",
+            "Password": "securepassword",
+            "CreatedAt": "2023-10-02T11:30:00Z"
+        }
+    ]
+}
