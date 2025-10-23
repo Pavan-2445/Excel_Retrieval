@@ -94,7 +94,7 @@ function Login() {
     
 
     return (
-            <div className='flex flex-row justify-center items-center absolute inset-0'>
+            <div className='flex justify-center items-center min-h-screen px-4'>
                 <GlassSurface
                     width={400}
                     height={500}
@@ -102,29 +102,30 @@ function Login() {
                     className="my-custom-class"
                 >
                     {!clicked ?
-                        <form className='flex flex-col justify-between  items-center gap-10' onSubmit={handleLogin}>
-                            <h1 className='text-white text-5xl font-bold'>LOGIN</h1>
-                            <input type='email' value={email} placeholder='Enter your email' className='text-white rounded-xl border border-white-20 p-2 w-85 h-8' onChange={(e) => setEmail(e.target.value)}/>
-                            <input type='password' value={password} placeholder='Enter your password' className='text-white rounded-xl border border-white-20 p-2 w-85 h-8' onChange={(e) => setPassword(e.target.value)}/>
-                            <button type='button' onClick={() => setClicked(true)} className='text-white ml-50 text-underline cursor-pointer'>forgot password?</button>
-                            <button type='submit' className='bg-blue-400 w-35 text-white rounded-md px-4 py-2 cursor-pointer'>Login</button>
+                        <form className='flex flex-col justify-center items-center gap-6 p-6' onSubmit={handleLogin}>
+                            <h1 className='text-white text-5xl font-bold mb-4'>LOGIN</h1>
+                            <input type='email' value={email} placeholder='Enter your email' className='text-white rounded-xl border border-white-20 p-3 w-90 h-10 bg-transparent' onChange={(e) => setEmail(e.target.value)}/>
+                            <input type='password' value={password} placeholder='Enter your password' className='text-white rounded-xl border border-white-20 p-3 w-full h-10 bg-transparent' onChange={(e) => setPassword(e.target.value)}/>
+                            <button type='button' onClick={() => setClicked(true)} className='text-white text-sm text-underline cursor-pointer ml-60 hover:text-blue-300'>forgot password?</button>
+                            <button type='submit' className='bg-blue-500 w-full text-white rounded-md px-4 py-3 cursor-pointer hover:bg-blue-600 transition-colors'>Login</button>
                         </form> :
-                        <form className='flex flex-col justify-between  items-center gap-10'>
-                                <h1 className='text-white text-5xl font-bold'>Reset Password</h1>
-                                <button type='button' onClick={handleBack} className='flex flex-row items-center text-white ml-70 gap-2 text-underline cursor-pointer'><img src={back} alt='backlogo'  className='w-4 h-4 '/> Back</button>
-                                <input type='email' value={email} placeholder='Enter your email' className='text-white rounded-xl border border-white-20 p-2 w-85 h-8' onChange={(e) => setEmail(e.target.value)}/>
+                        <form className='flex flex-col justify-center items-center gap-16 p-6'>
+                            
+                            <button type='button' onClick={handleBack} className='flex flex-row items-center text-white gap-2 text-underline mr-75 cursor-pointer hover:text-blue-300'><img src={back} alt='backlogo'  className='w-4 h-4 '/> Back</button>
+                                <h1 className='text-white text-4xl font-bold mb-4'>Reset Password</h1>
+                                <input type='email' value={email} placeholder='Enter your email' className='text-white rounded-xl border border-white-20 w-90 p-3 h-10 bg-transparent' onChange={(e) => setEmail(e.target.value)}/>
                             {(!otp && !newpassword) &&(
                                 <>
-                                    <button type='button' onClick = {checkEmail} className='bg-blue-400 w-35 text-white rounded-md px-4 py-2 cursor-pointer'>Send OTP</button>
+                                    <button type='button' onClick = {checkEmail} className='bg-blue-500 w-full text-white rounded-md px-4 py-3 cursor-pointer hover:bg-blue-600 transition-colors'>Send OTP</button>
                                 </>)}
                             {(otp && !newpassword) &&(
                                 <>
-                                <input type='text' value={OTP} placeholder='Enter OTP'  className='text-white rounded-xl border border-white-20 p-2 w-85 h-8' onChange={(e) => SetOTP(e.target.value)}/>
-                                <button type='button' onClick={checkOTP} className='bg-blue-400 w-35 text-white rounded-md px-4 py-2 cursor-pointer'>Submit OTP</button></>)}
+                                <input type='text' value={OTP} placeholder='Enter OTP'  className='text-white rounded-xl border border-white-20 p-3 w-full h-10 bg-transparent' onChange={(e) => SetOTP(e.target.value)}/>
+                                <button type='button' onClick={checkOTP} className='bg-blue-500 w-full text-white rounded-md px-4 py-3 cursor-pointer hover:bg-blue-600 transition-colors'>Submit OTP</button></>)}
                             {(otp && newpassword) &&(
                                 <>
-                                    <input type='password' value={password} placeholder='Enter your new password' className='text-white rounded-xl border border-white-20 p-2 w-85 h-8' onChange={(e) => setPassword(e.target.value)}/>
-                                    <button type='button' onClick={resetPassword} className='bg-blue-400 w-35 text-white rounded-md px-4 py-2 cursor-pointer'>Reset</button> </>)}
+                                    <input type='password' value={password} placeholder='Enter your new password' className='text-white rounded-xl border border-white-20 p-3 w-full h-10 bg-transparent' onChange={(e) => setPassword(e.target.value)}/>
+                                    <button type='button' onClick={resetPassword} className='bg-blue-500 w-full text-white rounded-md px-4 py-3 cursor-pointer hover:bg-blue-600 transition-colors'>Reset</button> </>)}
 
                         </form>
                     }

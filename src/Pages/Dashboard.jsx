@@ -49,15 +49,16 @@ function Dashboard() {
     return (<>
         <div className='flex flex-row items-center'><h1 className="flex flex-row items-center justify-end text-xl font-bold text-white gap-2 text-underline z-50 absolute m-2 top-4 left-5">{user.Name}</h1>
             <button type="button" onClick={handleLogout} className="flex flex-row items-center justify-end font-bold text-white gap-2 text-underline cursor-pointer z-50 absolute m-2 top-4 right-5"><img src={exit} alt="backlogo" className="w-4 h-4" />LOGOUT</button></div>
-        <div className="flex flex-row justify-center mt-28 absolute inset-0">
+        
+        <div className="flex flex-col items-center mt-28 px-4 pb-8">
             <GlassSurface
-                width={1400}
-                height={70}
+                width="min(1400px, 95vw)"
+                height="auto"
                 borderRadius={24}
-                className="my-custom-class"
+                className="my-custom-class mb-8"
             >
-                <div className='flex flex-row justify-between items-center gap-220'>
-                    <p className='text-white text-2xl font-bold'>Upload Your Excel File (.xlsx, .xls)</p>
+                <div className='flex flex-col sm:flex-row justify-between items-center gap-4 p-4'>
+                    <p className='text-white text-xl sm:text-2xl font-bold text-center sm:text-left'>Upload Your Excel File (.xlsx, .xls)</p>
                     <input
                         type='file'
                         id='file-upload'
@@ -67,24 +68,26 @@ function Dashboard() {
                     />
                     <label
                         htmlFor='file-upload'
-                        className='bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600'
+                        className='bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600 whitespace-nowrap'
                     >
                         Choose File
                     </label>
                 </div>
             </GlassSurface>
+            
             {Object.keys(excelData).length > 0 && (
-                <div className='flex flex-col  items-center mt-28 z-50 absolute inset-0'>
+                <div className='flex flex-col items-center gap-8 w-full'>
                     {Object.entries(excelData).map(([sheetName, rows]) => (
                         <GlassSurface
                             key={sheetName}
-                            width={1400}
-                            height={800}
+                            width="min(1400px, 95vw)"
+                            height="auto"
                             borderRadius={24}
                             className="my-custom-class"
-                        ><div className='flex flex-col gap-10 '>
+                        >
+                            <div className='flex flex-col gap-6 p-6'>
                                 <h2 style={{ color: 'white', fontSize: '2rem', fontWeight: 'bold', marginBottom: 16 }}>{sheetName}</h2>
-                                <div style={{ maxHeight: '450px', overflowY: 'auto', overflowX: 'auto' }}>
+                                <div style={{ maxHeight: '600px', overflowY: 'auto', overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #4b5563' }}>
                                         <thead
                                             style={{
