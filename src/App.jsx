@@ -5,8 +5,15 @@ import Dashboard from './Pages/Dashboard';
 
 function App() {
   return (
-    <div className="w-full h-screen fixed bg-black flex justify-center items-center -z-1">
-      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+    <div className="w-full min-h-screen bg-black relative">
+      <div style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        zIndex: 1 
+      }}>
         <Particles
           particleColors={['#ffffff', '#ffffff']}
           particleCount={600}
@@ -17,14 +24,14 @@ function App() {
           alphaParticles={false}
           disableRotation={false}
         />
-        <div className='z-2'>
+      </div>
+      <div className='relative z-10'>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </BrowserRouter>
-        </div>
       </div>
     </div>
   );
