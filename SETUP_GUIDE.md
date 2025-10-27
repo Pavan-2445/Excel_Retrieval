@@ -286,4 +286,4 @@ If you encounter any issues:
 
 ## Credits
 
-Built with ❤️ using React, Flask, and MySQL
+Built with using React, Flask, and MySQL
