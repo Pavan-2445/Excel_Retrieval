@@ -1,4 +1,4 @@
-# Excel Retrival Backend Setup Instructions
+# Excel Retrieval Backend Setup Instructions
 
 ## Prerequisites
 - Python 3.8 or higher
